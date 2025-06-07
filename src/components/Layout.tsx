@@ -1,6 +1,8 @@
 import React from "react";
 import Navbar from "./Navbar";
 
+import Footer from "./Footer";
+
 interface Children {
   children: React.ReactNode;
 }
@@ -12,6 +14,7 @@ function Layout({ children }: Children) {
         <Navbar />
       </div>
       {children}
+   
     </div>
   );
 }
