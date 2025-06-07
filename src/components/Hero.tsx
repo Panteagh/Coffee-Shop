@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import ShowMenuButton from "./ShowMenuButton";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 function Hero() {
   return (
@@ -22,7 +23,7 @@ function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.6 }}
         >
-          Taste the real taste of coffee
+          Tast the real taste of coffee
           <br /> with us!
         </motion.h1>
         <motion.div
@@ -31,7 +32,9 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.6 }}
         >
+          <Link href='/menu'>
           <ShowMenuButton />
+          </Link>
         </motion.div>
       </div>
     </section>
