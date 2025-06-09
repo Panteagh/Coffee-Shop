@@ -1,6 +1,5 @@
 "use client";
 import Titlepage from "@/components/Titlepage";
-import ProductCard from "@/components/ProductCard";
 import { useQuery } from "@tanstack/react-query";
 import { getProducts } from "@/lib/api";
 import { Product } from "@/types/Types";
@@ -8,6 +7,13 @@ import DivMotionWrapper from "@/components/DivMotionWrapper";
 import CategoryTab from "@/components/CategoryTab";
 import { useSearchParams } from "next/navigation";
 import Spinner from "@/components/Spinner";
+import Link from "next/link";
+import dynamic from "next/dynamic";
+import Skeleton from "@/components/Skeleton";
+
+const ProductCard = dynamic(() => import("@/components/ProductCard"), {
+  loading: () => <Skeleton />,
+});
 
 function MenuPage() {
   const searchParams = useSearchParams();
@@ -16,7 +22,7 @@ function MenuPage() {
     isLoading,
     isError,
   } = useQuery({
-    queryKey: ["product"],
+    queryKey: ["products"],
     queryFn: getProducts,
   });
 
@@ -31,9 +37,7 @@ function MenuPage() {
   if (isError) {
     return (
       <div className="w-full h-96 flex justify-center items-center">
-        <p className="text-lg text-red-500 font-semibold">
-          Error
-        </p>
+        <p className="text-lg text-red-500 font-semibold">Error</p>
       </div>
     );
   }
@@ -63,12 +67,14 @@ function MenuPage() {
       <DivMotionWrapper>
         <div className="mt-12 grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-3.5">
           {filteredProducts.map((item: Product) => (
-            <ProductCard
-              key={item.id}
-              image={item.image}
-              name={item.name}
-              price={item.price}
-            />
+            <Link key={item.id} href={`/menu/${item.id}`}>
+              <ProductCard
+                key={item.id}
+                image={item.image}
+                name={item.name}
+                price={item.price}
+              />
+            </Link>
           ))}
         </div>
       </DivMotionWrapper>
