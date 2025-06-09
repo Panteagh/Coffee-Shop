@@ -5,6 +5,7 @@ import ShowMenuButton from "./ShowMenuButton";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Titlepage from "./Titlepage";
+import DivMotionWrapper from "./DivMotionWrapper";
 
 function Hero() {
   return (
@@ -21,17 +22,12 @@ function Hero() {
           title={`Tast the real taste of coffee
                with us!`}
         />
-        <motion.div
-        className="mt-11"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.6 }}
-        >
+
+        <DivMotionWrapper>
           <Link href="/menu">
             <ShowMenuButton />
           </Link>
-        </motion.div>
+        </DivMotionWrapper>
       </div>
     </section>
   );

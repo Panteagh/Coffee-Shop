@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
       "prettysweetblog.com",
       "i.pinimg.com",
       "balancewithjess.com",
+      "tastyc.bslthemes.com"
 
     ],
   },

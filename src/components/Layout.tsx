@@ -1,11 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
-
-import Footer from "./Footer";
-
-interface Children {
-  children: React.ReactNode;
-}
+import { Children } from "@/types/Types";
 
 function Layout({ children }: Children) {
   return (
