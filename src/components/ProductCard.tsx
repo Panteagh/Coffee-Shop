@@ -10,7 +10,7 @@ interface ProductProps {
 
 function ProductCard({ name, image, price }: ProductProps) {
   return (
-    <div className="rounded-3xl flex flex-col p-3 border shadow">
+    <div className="rounded-3xl flex flex-col p-3 border shadow w-[246px]">
       <div className="w-full h-40 relative">
         <Image className="rounded-2xl" src={image} alt={name} fill />
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import CategoryCard from "./CategoryCard";
 import DivMotionWrapper from "./DivMotionWrapper";
+import Container from "./Container";
 
 function CategorySection() {
   const categorys = [
@@ -22,12 +23,12 @@ function CategorySection() {
   ];
   return (
     <DivMotionWrapper>
-      <div className="container mx-auto my-6 flex flex-col justify-center items-center p-3">
+      <Container>
         <h1 className="text-amber-950 font-bold text-4xl max-md:text-2xl mb-11">
           Quick categorization
         </h1>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 gap-6 ">
           {categorys.map((item) => (
             <CategoryCard
               key={item.title}
@@ -36,7 +37,7 @@ function CategorySection() {
             />
           ))}
         </div>
-      </div>
+      </Container>
     </DivMotionWrapper>
   );
 }
