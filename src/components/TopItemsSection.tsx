@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import DivMotionWrapper from "./DivMotionWrapper";
 import { useQuery } from "@tanstack/react-query";
@@ -27,8 +27,8 @@ function TopItemsSection() {
           <h1 className="text-amber-950 font-bold text-4xl max-md:text-2xl mb-11">
             Top Items
           </h1>
-          <div  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {TopItem.map((item: Product) => ( 
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {TopItem.map((item: Product) => (
               <Link key={item.id} href={`/menu/${item.id}`}>
                 <ProductCard
                   key={item.id}

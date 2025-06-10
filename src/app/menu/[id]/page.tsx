@@ -15,7 +15,13 @@ async function Product({ params }: ProductProps) {
   return (
     <div>
       <h1>
-      <ProductDetails key={data.id} name={data.name} price={data.price} description={data.description} image={data.image}/>
+        <ProductDetails
+          key={data.id}
+          name={data.name}
+          price={data.price}
+          description={data.description}
+          image={data.image}
+        />
       </h1>
     </div>
   );

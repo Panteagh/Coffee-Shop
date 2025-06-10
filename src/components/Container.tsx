@@ -3,7 +3,7 @@ import React from 'react'
 
 function Container({children}:Children) {
   return (
-    <div  className="container mx-auto justify-center items-center flex flex-col mt-11">
+    <div  className="container mx-auto justify-center items-center flex flex-col my-26">
       {children}
     </div>
   )

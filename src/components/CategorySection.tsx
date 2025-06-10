@@ -4,6 +4,7 @@ import DivMotionWrapper from "./DivMotionWrapper";
 import Container from "./Container";
 
 function CategorySection() {
+  
   const categorys = [
     {
       imgurl:
@@ -21,6 +22,7 @@ function CategorySection() {
       title: "Drink",
     },
   ];
+
   return (
     <DivMotionWrapper>
       <Container>
