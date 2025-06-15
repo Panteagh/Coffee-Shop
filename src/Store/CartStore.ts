@@ -33,11 +33,12 @@ export const useCartStore = create<CartState>()(
               i.id === item.id ? { ...i, qty: i.qty + 1 } : i
             ),
           });
-          toast.success("Item successfully added to cart.");
+          toast.success("Item quantity increased");
         } else {
           set({
             cart: [...cart, { ...item, qty: 1 }],
           });
+          toast.success("Item successfully added to cart.");
         }
       },
       removeFromCart: (id) => {
