@@ -3,7 +3,6 @@ import { useCartStore } from "@/Store/CartStore";
 import { CirclePlus } from "lucide-react";
 import Image from "next/image";
 import React from "react";
-import toast from "react-hot-toast";
 
 interface ProductProps {
   id: string;
@@ -32,7 +31,6 @@ function ProductCard({ name, image, price, id }: ProductProps) {
                 price,
                 image,
               });
-              toast.success("Item successfully added to cart.");
             }}
           >
             <CirclePlus size={22} color="#461901" />

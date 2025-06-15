@@ -1,17 +1,18 @@
+import toast from "react-hot-toast";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 export type CartItem = {
-    id: string;
-    price: string;
-    name: string;
-    image: string;
-    qty:number;
+  id: string;
+  price: string;
+  name: string;
+  image: string;
+  qty: number;
 };
 
 type CartState = {
   cart: CartItem[];
-  addToCart: (item: Omit<CartItem , 'qty'>) => void;
+  addToCart: (item: Omit<CartItem, "qty">) => void;
   removeFromCart: (id: string) => void;
   increaseQty: (id: string) => void;
   decreaseQty: (id: string) => void;
@@ -32,6 +33,7 @@ export const useCartStore = create<CartState>()(
               i.id === item.id ? { ...i, qty: i.qty + 1 } : i
             ),
           });
+          toast.success("Item successfully added to cart.");
         } else {
           set({
             cart: [...cart, { ...item, qty: 1 }],
@@ -61,6 +63,6 @@ export const useCartStore = create<CartState>()(
     }),
     {
       name: "coffee-cart",
-    }   
+    }
   )
 );
