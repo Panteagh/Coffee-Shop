@@ -70,6 +70,7 @@ function MenuPage() {
             <Link key={item.id} href={`/menu/${item.id}`}>
               <ProductCard
                 key={item.id}
+                id={item.id as string}
                 image={item.image}
                 name={item.name}
                 price={item.price}

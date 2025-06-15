@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Search, ShoppingBasket } from "lucide-react";
+import { useCartStore } from "@/Store/CartStore";
 
 function Navbar() {
+  const totalQty = useCartStore((state)=> state.cart.reduce((totalQty , item)=> totalQty + item.qty , 0))
   const pathname = usePathname();
 
   const nav = [
@@ -56,9 +58,16 @@ function Navbar() {
         <button>
           <Search color="#461901" size={22} />
         </button>
+        <Link href={'/cart'}>
         <button>
           <ShoppingBasket color="#461901" size={23} />
+          {totalQty > 0 && (
+          <span className="absolute -top-2 -right-2 text-sm bg-red-600 text-white w-5 h-5 flex items-center justify-center rounded-full">
+            {totalQty}
+          </span>
+        )}
         </button>
+        </Link>
       </div>
     </nav>
   );
