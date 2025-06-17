@@ -24,10 +24,10 @@ function ProductCard({ name, image, price, id }: ProductProps) {
         <Image className="rounded-2xl" src={image} alt={name} fill />
       </div>
       <div className="mt-2">
-        <h2 className="text-center font-bold text-amber-950">{name}</h2>
+        <h2 className="text-center font-bold text-amber-950 h-12 flex justify-center items-center">{name}</h2>
         <div className="flex justify-between mt-2">
           <h4 className="text-amber-950 font-extrabold">${price}</h4>
-          <button onClick={handleAddToCart}>
+          <button className="cursor-pointer" onClick={handleAddToCart}>
             <CirclePlus size={22} color="#461901" />
           </button>
         </div>
