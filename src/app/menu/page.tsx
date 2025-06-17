@@ -10,7 +10,6 @@ import Spinner from "@/components/Spinner";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import Skeleton from "@/components/Skeleton";
-import { useMemo } from "react";
 
 const ProductCard = dynamic(() => import("@/components/ProductCard"), {
   loading: () => <Skeleton />,
@@ -45,10 +44,12 @@ function MenuPage() {
 
   const selectedCategory = searchParams.get("category") || "all";
 
-  const categories = useMemo(() => [
+  const categories = [
     "all",
-    ...Array.from(new Set(products.map((p: Product) => p.category))) as string[],
-  ], [products]);
+    ...(Array.from(
+      new Set(products.map((p: Product) => p.category))
+    ) as string[]),
+  ];
 
   const filteredProducts =
     selectedCategory === "all"
