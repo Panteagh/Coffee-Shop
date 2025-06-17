@@ -4,7 +4,7 @@ import Image from "next/image";
 import SimpleButton from "./SimpleButton";
 
 type CartItemProps = {
-  price: string;
+  price: number;
   name: string;
   image: string;
   qty: number;

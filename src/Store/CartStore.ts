@@ -4,7 +4,7 @@ import { persist } from "zustand/middleware";
 
 export type CartItem = {
   id: string;
-  price: string;
+  price: number;
   name: string;
   image: string;
   qty: number;
@@ -34,6 +34,8 @@ export const useCartStore = create<CartState>()(
             ),
           });
           toast.success("Item quantity increased");
+          console.log(cart);
+          
         } else {
           set({
             cart: [...cart, { ...item, qty: 1 }],
