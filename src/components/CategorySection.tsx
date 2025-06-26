@@ -33,7 +33,7 @@ function CategorySection() {
         </h1>
 
         <div className="grid grid-cols-3 gap-6 ">
-          {categorys.map((item) => (
+          {categories.map((item) => (
             <CategoryCard
               key={item.title}
               href={item.href}
