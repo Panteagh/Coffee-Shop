@@ -1,71 +1,108 @@
-import toast from "react-hot-toast";
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { persist, createJSONStorage } from "zustand/middleware";
+import toast from "react-hot-toast";
 
 export type CartItem = {
   id: string;
-  price: number;
   name: string;
+  price: number;
   image: string;
   qty: number;
 };
 
 type CartState = {
-  cart: CartItem[];
-  addToCart: (item: Omit<CartItem, "qty">) => void;
+  items: CartItem[];
+  addToCart: (product: Omit<CartItem, "qty">, quantityToAdd?: number) => void;
   removeFromCart: (id: string) => void;
   increaseQty: (id: string) => void;
   decreaseQty: (id: string) => void;
   clearCart: () => void;
+  getTotalItems: () => number;
+  getTotalPrice: () => number;
 };
 
 export const useCartStore = create<CartState>()(
   persist(
     (set, get) => ({
-      cart: [],
-      addToCart: (item) => {
-        const cart = get().cart;
-        const existing = cart.find((product) => product.id === item.id);
+      items: [],
 
-        if (existing) {
-          set({
-            cart: cart.map((i) =>
-              i.id === item.id ? { ...i, qty: i.qty + 1 } : i
-            ),
-          });
-          toast.success("Item quantity increased");
-          console.log(cart);
-          
-        } else {
-          set({
-            cart: [...cart, { ...item, qty: 1 }],
-          });
-          toast.success("Item successfully added to cart.");
-        }
+      addToCart: (product, quantityToAdd = 1) => {
+        let message = "";
+        set((state) => {
+          const existingItem = state.items.find(
+            (item) => item.id === product.id
+          );
+          let newItems: CartItem[];
+
+          if (existingItem) {
+            newItems = state.items.map((item) =>
+              item.id === product.id
+                ? { ...item, qty: item.qty + quantityToAdd }
+                : item
+            );
+            message = `The number of  "${product.name}" increased`;
+          } else {
+            newItems = [...state.items, { ...product, qty: quantityToAdd }];
+            message = `"${product.name}" Added successfully`;
+          }
+          return { items: newItems };
+        });
+        toast.success(message);
+        console.log("Current cart:", get().items);
       },
+
       removeFromCart: (id) => {
-        set({
-          cart: get().cart.filter((item) => item.id !== id),
+        let removedItemName = "";
+        set((state) => {
+          const itemToRemove = state.items.find((item) => item.id === id);
+          if (itemToRemove) {
+            removedItemName = itemToRemove.name;
+          }
+          const newItems = state.items.filter((item) => item.id !== id);
+          return { items: newItems };
         });
+        toast.error(`"${removedItemName}" Removed from cart`);
+        console.log("Current cart after removal:", get().items);
       },
+
       increaseQty: (id) => {
-        set({
-          cart: get().cart.map((i) =>
-            i.id === id ? { ...i, qty: i.qty + 1 } : i
-          ),
+        set((state) => {
+          const newItems = state.items.map((item) =>
+            item.id === id ? { ...item, qty: item.qty + 1 } : item
+          );
+          return { items: newItems };
         });
+        toast.success("The number increased");
+        console.log("Current cart after increase:", get().items);
       },
+
       decreaseQty: (id) => {
-        set({
-          cart: get()
-            .cart.map((i) => (i.id === id ? { ...i, qty: i.qty - 1 } : i))
-            .filter((i) => i.qty > 0),
+        set((state) => {
+          const newItems = state.items
+            .map((item) =>
+              item.id === id ? { ...item, qty: item.qty - 1 } : item
+            )
+            .filter((item) => item.qty > 0);
+
+          return { items: newItems };
         });
+        toast.success("The number decreased");
+        console.log("Current cart after decrease:", get().items);
       },
-      clearCart: () => set({ cart: [] }),
+
+      clearCart: () => {
+        set({ items: [] });
+        toast.error("Shopping cart is empty.");
+        console.log("Cart cleared");
+      },
+
+      getTotalItems: () => get().items.reduce((sum, item) => sum + item.qty, 0),
+      getTotalPrice: () =>
+        get().items.reduce((sum, item) => sum + item.price * item.qty, 0),
     }),
     {
-      name: "coffee-cart",
+      name: "coffee-cart-storage",
+      storage: createJSONStorage(() => localStorage),
     }
   )
 );

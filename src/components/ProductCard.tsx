@@ -34,6 +34,6 @@ function ProductCard({ name, image, price, id }: ProductProps) {
       </div>
     </div>
   );
-}
+} 
 
 export default ProductCard;
