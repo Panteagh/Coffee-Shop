@@ -1,5 +1,6 @@
 import ProductDetails from "@/components/ProductDetails";
 import { getProduct } from "@/lib/api";
+import { notFound } from "next/navigation";
 import React from "react";
 
 interface ProductProps {
@@ -11,6 +12,10 @@ async function Product({ params }: ProductProps) {
   const { id } = await params;
 
   const data = await getProduct(id);
+
+  if(!data || !data.id){
+    notFound()
+  }
 
   return (
     <div>
