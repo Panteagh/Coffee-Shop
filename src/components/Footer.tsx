@@ -24,7 +24,7 @@ function Footer() {
     },
   ];
   return (
-    <div className="bg-[#2f1e10] p-6 rounded-t-2xl mt-24">
+    <footer className="bg-[#2f1e10] p-6 rounded-t-2xl mt-24">
       <div className="grid grid-cols-3 max-sm:grid-cols-1 gap-6">
         <div className="flex justify-center items-center max-sm:order-3">
           <Image
@@ -50,7 +50,7 @@ function Footer() {
         </div>
       </div>
       <CopyrightFooter />
-    </div>
+    </footer>
   );
 }
 

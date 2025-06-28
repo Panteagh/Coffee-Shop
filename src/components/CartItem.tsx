@@ -38,7 +38,7 @@ function CartItem({ name, price, image, qty, id }: CartItemProps) {
               </span>
               <SimpleButton icon={"-"} onClick={() => decreaseQty(id)} />
             </div>
-            <SimpleButton icon={<Trash />} onClick={() => removeFromCart(id)} />
+            <SimpleButton icon={<Trash size={20} className="my-2"/>} onClick={() => removeFromCart(id)} />
           </div>
         </div>
 
