@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Search, ShoppingBasket } from "lucide-react";
+import { ShoppingBasket } from "lucide-react";
 import { useCartStore } from "@/Store/CartStore";
 
 function Navbar() {
@@ -56,7 +56,6 @@ function Navbar() {
       </div>
       <div className="flex justify-center items-center gap-1.5">
         <button>
-          <Search color="#461901" size={22} />
         </button>
         <Link href={'/cart'}>
         <button className="relative">
