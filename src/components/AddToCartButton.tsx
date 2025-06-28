@@ -3,16 +3,13 @@ import React from "react";
 
 function AddToCartButton() {
   return (
-    <button className=" cursor-pointer bg-gradient-to-b from-amber-600 to-amber-800 shadow-[#9f4e13] px-6 py-3 rounded-xl border-[1px] border-amber-600 text-white font-medium group">
-      <div className="flex justify-center items-center overflow-hidden">
-        <p className="group-hover:-translate-y-7 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)] text-center">
+    <div className="flex items-center justify-center">
+      <button className="w-2/3 relative py-2 px-8 text-black text-base font-bold nded-full overflow-hidden bg-white rounded-full transition-all duration-400 ease-in-out shadow-md hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-amber-800 before:to-amber-100 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-full hover:before:left-0 text-center">
+        <h2 className="flex justify-center items-center">
           <ShoppingCart />
-        </p>
-        <p className="absolute top-7 left-0 group-hover:top-0 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]">
-          <ShoppingCart />
-        </p>
-      </div>
-    </button>
+        </h2>
+      </button>
+    </div>
   );
 }
 
