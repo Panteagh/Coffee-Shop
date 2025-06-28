@@ -7,18 +7,10 @@ const AboutPage = () => {
       <h1 className="text-3xl font-bold mb-6 text-center">About Me</h1>
       
       <div className="flex flex-col md:flex-row gap-8 items-center">
-        <div className="relative w-40 h-40 rounded-full overflow-hidden shadow-md">
-          <Image
-            src="/profile-placeholder.jpg"
-            alt="Profile"
-            fill
-            className="object-cover"
-          />
-        </div>
 
         <div className="flex-1 text-base leading-relaxed space-y-4">
           <p>
-            Hi! I'm <strong>Panthéa</strong>, a front-end developer with a passion for
+            Hi! I'm <strong>Pantea</strong>, a front-end developer with a passion for
             clean code, thoughtful UI, and seamless user experience.
           </p>
           <p>
