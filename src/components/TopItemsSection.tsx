@@ -8,6 +8,7 @@ import Link from "next/link";
 import Container from "./Container";
 import dynamic from "next/dynamic";
 import Skeleton from "./Skeleton";
+import HomePageError from "./HomePageError";
 
 const ProductCard = dynamic(() => import("@/components/ProductCard"), {
   loading: () => <Skeleton />,
@@ -20,12 +21,8 @@ function TopItemsSection() {
   });
 
   if (isError) {
-    return (
-      <div className="w-full h-96 flex justify-center items-center">
-        <p className="text-lg text-red-500 font-semibold">Error</p>
-      </div>
-    );
-  }
+      return <HomePageError />
+    }
 
   const TopItem = products.slice(0, 3);
 

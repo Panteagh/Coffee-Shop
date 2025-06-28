@@ -10,6 +10,7 @@ import Spinner from "@/components/Spinner";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import Skeleton from "@/components/Skeleton";
+import ErrorMessage from "@/components/ErrorMessage";
 
 const ProductCard = dynamic(() => import("@/components/ProductCard"), {
   loading: () => <Skeleton />,
@@ -35,11 +36,7 @@ function MenuPage() {
   }
 
   if (isError) {
-    return (
-      <div className="w-full h-96 flex justify-center items-center">
-        <p className="text-lg text-red-500 font-semibold">Error</p>
-      </div>
-    );
+    return <ErrorMessage message="Failed to fetch products from the server." />;
   }
 
   const selectedCategory = searchParams.get("category") || "all";
