@@ -1,18 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Layout from "@/components/Layout";
 import QueryProvider from "@/providers/QueryProvider";
+import { Poppins, Quicksand } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
   subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--font-poppins",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const quicksand = Quicksand({
   subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-quicksand",
 });
+
+
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,8 +30,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+<html lang="en" className={`${poppins.variable} ${quicksand.variable} antialiased`}>
+
+      <body>
         <QueryProvider>
           <Layout>{children}</Layout>
         </QueryProvider>

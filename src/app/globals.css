@@ -112,6 +112,21 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+:root {
+  --font-body: var(--font-poppins);
+  --font-heading: var(--font-quicksand);
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+}
+
+
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
