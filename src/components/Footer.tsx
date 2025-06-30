@@ -28,7 +28,7 @@ function Footer() {
       <div className="grid grid-cols-3 max-sm:grid-cols-1 gap-6">
         <div className="flex justify-center items-center max-sm:order-3">
           <Image
-          className="max-sm:w-[180px] max-sm:h-[180px]"
+            className="max-sm:w-[180px] max-sm:h-[180px]"
             src={"/assets/FooterImg.png"}
             alt="Coffee Land"
             width={200}

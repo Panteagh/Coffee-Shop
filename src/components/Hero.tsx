@@ -2,7 +2,6 @@
 import Image from "next/image";
 import React from "react";
 import ShowMenuButton from "./ShowMenuButton";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import Titlepage from "./Titlepage";
 import DivMotionWrapper from "./DivMotionWrapper";

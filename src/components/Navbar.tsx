@@ -7,7 +7,7 @@ import { ShoppingBasket } from "lucide-react";
 import { useCartStore } from "@/Store/CartStore";
 
 function Navbar() {
-  const totalQty = useCartStore((state)=> state.getTotalItems())
+  const totalQty = useCartStore((state) => state.getTotalItems());
   const pathname = usePathname();
 
   const nav = [
@@ -55,17 +55,16 @@ function Navbar() {
         ))}
       </div>
       <div className="flex justify-center items-center gap-1.5">
-        <button>
-        </button>
-        <Link href={'/cart'}>
-        <button className="relative">
-          <ShoppingBasket color="#461901" size={23} />
-          {totalQty > 0 && (
+        <button></button>
+        <Link href={"/cart"}>
+          <button className="relative">
+            <ShoppingBasket color="#461901" size={23} />
+            {totalQty > 0 && (
               <span className="absolute -top-1.5 -right-2.5 text-sm bg-red-600 text-white w-5 h-5 flex items-center justify-center rounded-full">
                 {totalQty}
               </span>
             )}
-        </button>
+          </button>
         </Link>
       </div>
     </nav>

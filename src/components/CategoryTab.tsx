@@ -14,14 +14,18 @@ function CategoryTab({ categories }: Props) {
 
   const currentCategory = searchParams.get("category") || "all";
 
-  const handleChange = (category:string) =>{
-    const params = new URLSearchParams(searchParams)
-    params.set("category" , category)
-    router.push(`${pathname}?${params.toString()}`)
-  }
+  const handleChange = (category: string) => {
+    const params = new URLSearchParams(searchParams);
+    params.set("category", category);
+    router.push(`${pathname}?${params.toString()}`);
+  };
 
   return (
-    <Tabs value={currentCategory} onValueChange={handleChange} className="w-full mt-8">
+    <Tabs
+      value={currentCategory}
+      onValueChange={handleChange}
+      className="w-full mt-8"
+    >
       <TabsList className="flex justify-center gap-2 flex-wrap bg-muted rounded-xl">
         {categories.map((cat) => (
           <TabsTrigger key={cat} value={cat}>

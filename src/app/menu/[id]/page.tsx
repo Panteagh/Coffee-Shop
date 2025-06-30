@@ -15,7 +15,7 @@ async function Product({ params }: ProductProps) {
 
   if(!data || !data.id){
     notFound()
-  }
+  } 
 
   return (
     <div>

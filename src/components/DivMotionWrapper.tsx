@@ -11,7 +11,6 @@ function DivMotionWrapper({ children }: Children) {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-        // viewport={{ once: true, amount: 0.6 }}
       >
         {children}
       </motion.div>

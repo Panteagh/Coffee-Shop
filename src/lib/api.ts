@@ -14,8 +14,8 @@ export async function getProduct(id: string) {
     const res = await fetch(
       `https://683cb76b199a0039e9e338a5.mockapi.io/api/product/${id}`
     );
-    return res.json()
+    return res.json();
   } catch {
-    throw new Error("fetch is faild")
+    throw new Error("fetch is faild");
   }
 }

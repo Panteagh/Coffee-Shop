@@ -10,7 +10,6 @@ export default function Home() {
       <CategorySection />
       <TopItemsSection />
       <AboutMeSection />
-   
     </>
   );
 }

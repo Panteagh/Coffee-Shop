@@ -1,6 +1,5 @@
 import { Github, Linkedin } from "lucide-react";
 import React from "react";
-// import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 function SocialMediasBottons() {
   return (
@@ -26,4 +25,3 @@ function SocialMediasBottons() {
 }
 
 export default SocialMediasBottons;
-

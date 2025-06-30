@@ -6,7 +6,7 @@ interface TitleProps {
   title: string;
 }
 
-function Titlepage({title}: TitleProps) {
+function Titlepage({ title }: TitleProps) {
   return (
     <div>
       <motion.h1

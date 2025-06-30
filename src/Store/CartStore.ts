@@ -48,7 +48,6 @@ export const useCartStore = create<CartState>()(
           return { items: newItems };
         });
         toast.success(message);
-        console.log("Current cart:", get().items);
       },
 
       removeFromCart: (id) => {
@@ -62,7 +61,6 @@ export const useCartStore = create<CartState>()(
           return { items: newItems };
         });
         toast.error(`"${removedItemName}" Removed from cart`);
-        console.log("Current cart after removal:", get().items);
       },
 
       increaseQty: (id) => {
@@ -73,7 +71,6 @@ export const useCartStore = create<CartState>()(
           return { items: newItems };
         });
         toast.success("The number increased");
-        console.log("Current cart after increase:", get().items);
       },
 
       decreaseQty: (id) => {
@@ -87,13 +84,11 @@ export const useCartStore = create<CartState>()(
           return { items: newItems };
         });
         toast.success("The number decreased");
-        console.log("Current cart after decrease:", get().items);
       },
 
       clearCart: () => {
         set({ items: [] });
         toast.error("Shopping cart is empty.");
-        console.log("Cart cleared");
       },
 
       getTotalItems: () => get().items.reduce((sum, item) => sum + item.qty, 0),

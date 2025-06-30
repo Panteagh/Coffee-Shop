@@ -1,28 +1,41 @@
 "use client";
 import React from "react";
 import DivMotionWrapper from "./DivMotionWrapper";
-import { useQuery } from "@tanstack/react-query";
-import { getProducts } from "@/lib/api";
-import { Product } from "@/types/Types";
 import Link from "next/link";
 import Container from "./Container";
 import dynamic from "next/dynamic";
 import Skeleton from "./Skeleton";
-import HomePageError from "./HomePageError";
+import { useQuery } from "@tanstack/react-query";
+import { getProducts } from "@/lib/api";
+import { Product } from "@/types/Types";
+import Spinner from "./Spinner";
+import ErrorFallback from "./ErrorFallback";
 
 const ProductCard = dynamic(() => import("@/components/ProductCard"), {
   loading: () => <Skeleton />,
 });
 
 function TopItemsSection() {
-  const { data: products = [], isError } = useQuery({
+  const {
+    data: products = [],
+    isError,
+    isLoading,
+  } = useQuery({
     queryKey: ["products"],
     queryFn: getProducts,
   });
 
+  if (isLoading) {
+    return (
+      <div className="flex justify-center ">
+        <Spinner />
+      </div>
+    );
+  }
+
   if (isError) {
-      return <HomePageError />
-    }
+    return <ErrorFallback />;
+  }
 
   const TopItem = products.slice(0, 3);
 
