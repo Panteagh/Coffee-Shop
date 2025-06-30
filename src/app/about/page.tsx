@@ -1,33 +1,41 @@
+/* eslint-disable react/no-unescaped-entities */
 import DivMotionWrapper from "@/components/DivMotionWrapper";
+import SocialMediasBottons from "@/components/SocialMediasBottons";
 import React from "react";
 
 const AboutPage = () => {
   return (
     <DivMotionWrapper>
-      <div className="max-w-3xl mx-auto px-4 py-12 text-amber-950">
-        <h1 className="text-3xl font-bold mb-6 text-center">About Me</h1>
+      <div className="max-w-5xl mx-auto px-4 py-16 text-amber-950">
+        <h1 className="text-5xl font-bold mb-12 text-center">About Me</h1>
 
-        <div className="flex flex-col md:flex-row gap-8 items-center">
-          <div className="flex-1 text-base leading-relaxed space-y-4">
+        <div className="flex flex-col md:flex-row items-center gap-12">
+          <div className="flex-1 text-lg leading-relaxed space-y-6">
             <p>
-              Hi! I'm <strong>Pantea</strong>, a front-end developer with a
-              passion for clean code, thoughtful UI, and seamless user
-              experience.
+              Hi! I'm <strong>Pantea</strong>, a passionate front-end developer
+              who thrives on clean code, elegant UIs, and seamless user
+              experiences.
             </p>
             <p>
               I specialize in <strong>React</strong>, <strong>Next.js</strong>,
-              and <strong>TypeScript</strong>. I love crafting responsive,
-              dynamic interfaces and bringing ideas to life through code.
+              and <strong>TypeScript</strong>, building responsive and dynamic
+              interfaces that bring ideas to life.
             </p>
             <p>
-              I'm currently focused on improving my skills in logic, component
-              architecture, and advanced state management with tools like
-              <strong>Zustand</strong> and <strong>React Query</strong>.
+              My current focus is on sharpening my skills in logic design,
+              component architecture, and advanced state management with tools
+              like <strong>Zustand</strong> and <strong>React Query</strong>.
             </p>
             <p>
-              When I’m not coding, I’m probably learning new tools, reading, or
-              exploring design systems. Let’s build something amazing together!
+              When I’m not coding, you can find me exploring new design systems,
+              reading, or learning new tools. Let’s build something amazing
+              together!
             </p>
+
+            <div className="mt-8">
+              <h2 className="text-xl font-semibold mb-2">Find me on:</h2>
+              <SocialMediasBottons />
+            </div>
           </div>
         </div>
       </div>

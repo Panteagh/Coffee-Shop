@@ -5,7 +5,7 @@ import React from "react";
 
 interface ProductProps {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{}>;
+  searchParams?: Promise<object>;
 }
 
 async function Product({ params }: ProductProps) {
