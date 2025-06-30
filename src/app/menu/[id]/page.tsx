@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import React from "react";
 
 interface ProductProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
   searchParams?: Promise<object>;
 }
 
@@ -13,9 +13,9 @@ async function Product({ params }: ProductProps) {
 
   const data = await getProduct(id);
 
-  if(!data || !data.id){
-    notFound()
-  } 
+  if (!data || !data.id) {
+    notFound();
+  }
 
   return (
     <div>
