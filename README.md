@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ☕ Coffee Land
 
-## Getting Started
+A modern, elegant, and fully responsive coffee shop web app built with **Next.js 14**, **React**, and **TypeScript**.  
+Enjoy seamless shopping experience, category filtering, animations, cart management, and more.
 
-First, run the development server:
+## 🖼️ Preview
+
+### 🏠 Home Page  
+![Image](https://github.com/user-attachments/assets/2b653798-be04-4f2b-a12d-1649a9706aa2)
+
+### 🍽️ Menu Page  
+![Image](https://github.com/user-attachments/assets/01be5bf7-cb53-4c02-8900-227dea2cfeef)
+
+## 🚀 Live Demo
+
+👉 [View Deployed Project on Vercel](https://coffee-shop-navy-five.vercel.app/)
+
+---
+
+## ✨ Features
+
+- ⚡️ Fully responsive design
+- 🛒 Shopping cart with persistent Zustand store
+- 🔍 Category filtering and search
+- 🧠 State management with Zustand & React Query
+- 🖼 Smooth animations with Framer Motion
+- 🔐 Ready for auth integration (Login UI included)
+- 🚫 Custom 404 page
+- 🎨 Clean and modern UI with Tailwind CSS
+- 🌐 Dynamic routing with loading/error states
+
+---
+
+## 🛠️ Stack
+
+| Tech              | Description                        |
+| ---------------- | ---------------------------------- |
+| Next.js 14       | App router, dynamic routes         |
+| React 18         | Client components, Suspense        |
+| TypeScript       | Strongly typed everywhere          |
+| Tailwind CSS     | Utility-first styling              |
+| Zustand          | Global state management (cart)     |
+| React Query      | Data fetching and caching          |
+| Framer Motion    | UI animations                      |
+| Vercel           | Deployment                         |
+
+---
+
+## 🧪 Notes
+
+- 🔐 Login is UI-only; no backend/auth included.
+- 🧩 No database/API — data is mocked from static files or internal APIs.
+- 🛑 If API call fails, fallback error component (ErrorMessage) is shown.
+
+
+## 🧪 How to Run Locally
 
 ```bash
+# Clone the repo
+git clone https://github.com/your-username/coffee-land.git
+
+# Install dependencies
+cd coffee-land
+npm install
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
