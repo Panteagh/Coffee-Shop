@@ -19,7 +19,7 @@ function CategorySection() {
     },
     {
       imgurl:
-        "https://tastyc.bslthemes.com/coffee/wp-content/webp-express/webp-images/uploads/sites/3/2021/07/st-menu2-700x456.jpg.webp",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRozsVYVUyHoVj-NXRdqLeUkGwJbG8TXh3jyQ&s",
       title: "Drink",
       href: "/menu?category=drink",
     },
