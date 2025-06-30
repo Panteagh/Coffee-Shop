@@ -20,7 +20,7 @@ function AboutMeSection() {
           <div className="w-1/2 max-sm:w-full text-[#FAE7C7] flex flex-col gap-2.5 p-6">
             <h2 className="font-semibold text-2xl">about me</h2>
             <p className="max-md:text-sm">
-              Hi, I'm Pantea — a front-end developer with a passion for clean
+              Hi, I&apos;m Pantea — a front-end developer with a passion for clean
               design and smooth user experiences. This coffee shop website is a
               personal project I built from scratch to sharpen my skills in
               React, Next.js, and UI development. Hope you enjoy browsing as
