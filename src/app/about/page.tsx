@@ -11,7 +11,7 @@ const AboutPage = () => {
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1 text-lg leading-relaxed space-y-6">
             <p>
-              Hi! Im <strong>Pantea</strong>, a passionate front-end developer
+              Hi! I&apos;m <strong>Pantea</strong>, a passionate front-end developer
               who thrives on clean code, elegant UIs, and seamless user
               experiences.
             </p>
@@ -26,8 +26,8 @@ const AboutPage = () => {
               like <strong>Zustand</strong> and <strong>React Query</strong>.
             </p>
             <p>
-              When Im not coding, you can find me exploring new design systems,
-              reading, or learning new tools. Lets build something amazing
+              When I&apos;m not coding, you can find me exploring new design systems,
+              reading, or learning new tools. Let&apos;s build something amazing
               together!
             </p>
 
