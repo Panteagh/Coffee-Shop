@@ -22,6 +22,7 @@ async function Product({ params }: ProductProps) {
       <h1>
         <ProductDetails
           key={data.id}
+          id={data.id as string}
           name={data.name}
           price={data.price}
           description={data.description}

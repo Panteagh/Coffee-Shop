@@ -3,8 +3,15 @@ import Image from "next/image";
 import React from "react";
 import AddToCartButton from "./AddToCartButton";
 import DivMotionWrapper from "./DivMotionWrapper";
+import { useCartStore } from "@/Store/CartStore";
 
-function ProductDetails({ description, image, name, price }: Product) {
+function ProductDetails({ description, image, name, price , id }: Product) {
+  const addToCart = useCartStore((state)=> state.addToCart)
+
+  const handleAddToCart = () => {
+    addToCart({ id:id!, name, price: Number(price), image });
+  };
+
   return (
     <DivMotionWrapper>
       <div className="container mx-auto w-[80%] h-auto border rounded-4xl p-5 flex flex-row max-sm:flex-col-reverse mt-16 gap-2.5 shadow">
@@ -16,7 +23,7 @@ function ProductDetails({ description, image, name, price }: Product) {
           <h4 className="text-amber-950 text-2xl max-md:text-sm font-extrabold">
             ${price}
           </h4>
-          <AddToCartButton />
+          <AddToCartButton onClick={handleAddToCart}/>
         </div>
 
         <div className="w-1/2 max-sm:w-full relative h-64 max-sm:h-52">
