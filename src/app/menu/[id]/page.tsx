@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import React from "react";
 
 interface ProductProps {
-  params: Promise<{ id: string }>;
+  params: { id: string };
   searchParams?: Promise<object>;
 }
 
