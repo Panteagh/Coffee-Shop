@@ -88,7 +88,6 @@ export const useCartStore = create<CartState>()(
 
       clearCart: () => {
         set({ items: [] });
-        toast.error("Shopping cart is empty.");
       },
 
       getTotalItems: () => get().items.reduce((sum, item) => sum + item.qty, 0),

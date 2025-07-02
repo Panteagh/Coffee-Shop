@@ -2,7 +2,7 @@
 import { ShoppingCart } from "lucide-react";
 import React from "react";
 interface prop{
-  onClick : ()=> void;
+  onClick : (e:React.MouseEvent)=> void;
 }
 
 function AddToCartButton({onClick}:prop) {
