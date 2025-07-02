@@ -7,17 +7,16 @@ import DivMotionWrapper from "@/components/DivMotionWrapper";
 import CategoryTab from "@/components/CategoryTab";
 import { useSearchParams } from "next/navigation";
 import Spinner from "@/components/Spinner";
+import Link from "next/link";
 import dynamic from "next/dynamic";
 import Skeleton from "@/components/Skeleton";
 import ErrorMessage from "@/components/ErrorMessage";
-import { useRouter } from "next/router";
 
 const ProductCard = dynamic(() => import("@/components/ProductCard"), {
   loading: () => <Skeleton />,
 });
 
 function MenuPage() {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const {
     data: products = [],
@@ -65,19 +64,15 @@ function MenuPage() {
       <DivMotionWrapper>
         <div className="mt-12 grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-3.5">
           {filteredProducts.map((item: Product) => (
-             <div
-             key={item.id}
-             className="cursor-pointer"
-             onClick={() => router.push(`/menu/${item.id}`)} // 👈 navigation دستی فقط وقتی کل کارت کلیک شد
-           >
-             <ProductCard
-               id={item.id as string}
-               image={item.image}
-               name={item.name}
-               price={item.price}
-             />
-           </div>
-         
+            <Link key={item.id} href={`/menu/${item.id}`}>
+              <ProductCard
+                key={item.id}
+                id={item.id as string}
+                image={item.image}
+                name={item.name}
+                price={item.price}
+              />
+            </Link>
           ))}
         </div>
       </DivMotionWrapper>
