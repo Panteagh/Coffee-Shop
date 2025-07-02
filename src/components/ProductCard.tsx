@@ -14,7 +14,8 @@ interface ProductProps {
 function ProductCard({ name, image, price, id }: ProductProps) {
   const addToCart = useCartStore((state) => state.addToCart);
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (e:React.MouseEvent) => {
+    e.stopPropagation()
     addToCart({ id, name, price: Number(price), image });
   };
 

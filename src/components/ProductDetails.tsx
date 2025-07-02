@@ -9,8 +9,7 @@ import { useCartStore } from "@/Store/CartStore";
 function ProductDetails({ description, image, name, price , id }: Product) {
   const addToCart = useCartStore((state)=> state.addToCart)
 
-  const handleAddToCart = (e:React.MouseEvent) => {
-    e.stopPropagation()
+  const handleAddToCart = () => {
     addToCart({ id:id!, name, price: Number(price), image });
   };
 
