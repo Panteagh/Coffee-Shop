@@ -7,7 +7,6 @@ import DivMotionWrapper from "@/components/DivMotionWrapper";
 import CategoryTab from "@/components/CategoryTab";
 import { useSearchParams } from "next/navigation";
 import Spinner from "@/components/Spinner";
-// import Link from "next/link";
 import dynamic from "next/dynamic";
 import Skeleton from "@/components/Skeleton";
 import ErrorMessage from "@/components/ErrorMessage";
