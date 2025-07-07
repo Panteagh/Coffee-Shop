@@ -39,6 +39,7 @@ Enjoy seamless shopping experience, category filtering, animations, cart managem
 | React 18         | Client components, Suspense        |
 | TypeScript       | Strongly typed everywhere          |
 | Tailwind CSS     | Utility-first styling              |
+| Tailwind CSS     | UI with custom components          |
 | Zustand          | Global state management (cart)     |
 | React Query      | Data fetching and caching          |
 | Framer Motion    | UI animations                      |
